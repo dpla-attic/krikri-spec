@@ -23,4 +23,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'krikri'
 
   s.add_development_dependency 'yard'
+  s.add_development_dependency 'rspec', '~> 3.2'
 end
