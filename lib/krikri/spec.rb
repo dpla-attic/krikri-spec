@@ -1,11 +1,11 @@
 ##
-# `Krikri::Spec` offers RSpec extensions and shared examples for the Krikri 
+# `Krikri::Spec` offers RSpec extensions and shared examples for the Krikri
 # metadata aggregation engine.
 #
 # Shared examples must be required explictly for specs that use them. This helps
-# with clarity of shared example use, and avoids namespace pollution for 
+# with clarity of shared example use, and avoids namespace pollution for
 # `it_behaves_like` directives.
-# 
+#
 # @example using a shared example
 #   require 'krikri/spec/harvester'
 #
@@ -14,11 +14,12 @@
 #   end
 #
 #
-# RSpec matchers are included for common checks within Krikri based applications.
+# RSpec matchers are included for common checks within Krikri based
+# applications.
 #
 # @example using a custom matcher
 #   require 'krikri/spec'
-#    
+#
 #   RSpec.configure { |conf| conf.include(Krikri::Spec::Matchers) }
 #
 #   describe SomeModel do

@@ -2,12 +2,11 @@ require 'rspec/matchers'
 
 module Krikri::Spec
   ##
-  # Defines matchers for Krikri 
+  # Defines matchers for Krikri
   #
   # @see http://rubygems.org/gems/rspec
   # @see http://www.rubydoc.info/gems/rspec-expectations/RSpec/Matchers
   module Matchers
-
     # @!group ActiveTriples Matchers
 
     ##
@@ -15,7 +14,7 @@ module Krikri::Spec
     RSpec::Matchers.define :be_exact_match_with do |expected|
       match do |actual|
         exact_match = RDF::URI('http://www.w3.org/2004/02/skos/core#exactMatch')
-        not actual.first([actual, exact_match, expected]).nil?
+        !actual.first([actual, exact_match, expected]).nil?
       end
     end
 

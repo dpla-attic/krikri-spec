@@ -55,7 +55,7 @@ shared_examples 'a harvester' do
   describe '.expected_opts' do
     it 'returns a hash with key and options' do
       expect(described_class.expected_opts)
-        .to match a_hash_including(:key => (an_instance_of(Symbol)),
+        .to match a_hash_including(:key =>  an_instance_of(Symbol),
                                    :opts => an_instance_of(Hash))
     end
   end
@@ -108,8 +108,8 @@ shared_examples 'a harvester' do
   describe '#run' do
     before do
       allow(harvester).to receive(:records)
-                           .and_return [double('Original Record 1'),
-                                        double('Record 2')]
+        .and_return [double('Original Record 1'),
+                     double('Record 2')]
     end
 
     let(:activity_uri) { RDF::URI('http://example.org/prov/activity/1') }
@@ -117,7 +117,7 @@ shared_examples 'a harvester' do
     it 'processes the OriginalRecords' do
       harvester.records.each do |r|
         expect(harvester).to receive(:process_record).with(r, activity_uri)
-                             .and_return(true)
+          .and_return(true)
       end
       harvester.run(activity_uri)
     end
