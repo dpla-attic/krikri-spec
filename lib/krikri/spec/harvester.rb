@@ -1,3 +1,5 @@
+require 'krikri/spec/software_agent'
+
 shared_examples 'a harvester' do
   opts = { uri: 'http://example.org/endpoint' }
   it_behaves_like 'a software agent', opts
