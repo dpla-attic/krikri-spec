@@ -38,8 +38,6 @@ shared_examples 'a harvester' do
 
     it 'mints md5 identifiers with #records' do
       expect(Krikri::Md5Minter).to receive(:create)
-        .with(harvester.record_ids.first,
-              harvester.name)
         .and_return(gen_id)
 
       expect(harvester.records.first.local_name).to eq gen_id
@@ -47,7 +45,6 @@ shared_examples 'a harvester' do
 
     it 'mints md5 identifiers with #get_record' do
       expect(Krikri::Md5Minter).to receive(:create)
-        .with(harvester.record_ids.first, harvester.name)
         .and_return(gen_id)
       expect(harvester.get_record(harvester.record_ids.first).local_name)
         .to eq gen_id
@@ -80,7 +77,7 @@ shared_examples 'a harvester' do
 
       it 'idempotent reharvests' do
         subject.records.each(&:save)
-        records = subject.records
+        records   = subject.records
         records_2 = subject.records
         loop do
           r1 = records.next
