@@ -22,8 +22,8 @@ Gem::Specification.new do |s|
   s.files = Dir['lib/**/*', 'README.md']
   s.test_files = Dir['spec/**/*']
 
-  s.add_dependency 'krikri'
   s.add_dependency 'rspec',  '~> 3.3'
 
+  s.add_development_dependency 'krikri'
   s.add_development_dependency 'yard'
 end
